@@ -56,6 +56,7 @@ export default class Slider extends Component {
   }
 
   render() {
+    const {leftImage, rightImage, leftImageStyle, rightImageStyle} = this.props;
     return (
       <View
         onLayout={event => {
@@ -63,6 +64,8 @@ export default class Slider extends Component {
         }}
         style={[this.props.containerStyle, { alignItems: 'flex-start' }]}
       >
+        {leftImage && <Image source={leftImage} style={[{position: 'absolute', height: 20, right: -10, top: -35,zIndex: 30, resizeMode: 'contain'}, leftImageStyle ? leftImageStyle : {}]}></Image>}
+        {rightImage && <Image source={rightImage} style={[{position: 'absolute', height: 20, left: -10, top: -35,zIndex: 30, resizeMode: 'contain'}, rightImageStyle ? rightImageStyle : {}]}></Image>}
         <Animated.View
           onLayout={event => {
             this.setState({ squareWidth: event.nativeEvent.layout.width });
