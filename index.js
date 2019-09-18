@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, PanResponder, Animated } from 'react-native';
+import { View, PanResponder, Animated, Image } from 'react-native';
 
 import PropTypes from 'prop-types';
 
